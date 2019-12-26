@@ -208,7 +208,7 @@
       replayBtn.addEventListener('click', () => {
         // タイマーをリセットしています。
         elapsedTime = 0;
-        timeToadd = 0;
+        
         gameCounter = 0;
         updateTimetText();
         // 画面を難易度選択にしています。
@@ -224,6 +224,7 @@
     clearTimeout(timerId);
     timeToadd += Date.now() - startTime;
     // タイマーをリセットしています。
+    timeToadd = 0;
     elapsedTime = 0;
     timeToadd = 0;
     updateTimetText();
