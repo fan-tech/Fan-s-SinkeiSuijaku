@@ -234,7 +234,6 @@
     // 画面を難易度選択にしています。
     mainGameArea.style.display = 'none';
     resetGame();
-    finalResult.style.display = 'none';
     levelChoice.style.display = 'block';
     backBtn.style.display = 'none';
   });
@@ -403,13 +402,13 @@
       // カード自体のサイズを変更
 
       // カード選択エリアの白背景のheight,margin-topを設定。
-      cardsArea.style.height = '490px';
+      cardsArea.style.height = '460px';
       cardsArea.style.marginTop = '3px';
       // ピンク背景のアレを調整
-      mainGameArea.style.height = '510px';
-      mainGameArea.style.marginTop = '-325px';
+      mainGameArea.style.height = '480px';
+      mainGameArea.style.marginTop = '-280px';
       // 難易度設定に戻るボタンの調整
-      backBtn.style.marginTop = '220px';
+      backBtn.style.marginTop = '230px';
       // ゲーム部分
       gameStart();
     }
