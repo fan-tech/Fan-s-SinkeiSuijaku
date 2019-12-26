@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <title>数字合わせゲーム</title>
+  <link rel="stylesheet" href="css/.styles.css">
+</head>
+
+<body>
+  <!-- メインゲームエリア -->
+  <section id="mainGameArea">
+    <div id="outside-cards-area">
+      <main id="cardsArea">
+
+
+
+
+      </main>
+    </div>
+    <div id="timer">Time: <span id="nowTime">90</span>秒</div>
+    <div class="btn" id="backBtn">
+      <div>難易度選択へ戻る</div>
+  </section>
+
+  <!-- ルール画面説明 -->
+  <section id="rule" class="popup">
+    <main>
+      <h1>数字合わせゲーム</h1>
+      <p>ルール</p>
+      <div>
+        <p>
+          いわゆる、神経衰弱ゲームです。<br>
+          次の画面で難易度選択をして、<br>
+          Startボタンを押すとゲームが開始されます！<br>
+          全部めくり終わったらゲーム終了です。
+        </p>
+        <div class="btn" id="okBtn">
+          <div>OK! </div>
+        </div>
+      </div>
+
+    </main>
+
+  </section>
+  <!-- 難易度設定画面 -->
+  <section id="levelChoice" class="popup">
+    <main>
+      <h1>難易度選択</h1>
+      <div class="levelChoiceBtns">
+        <div id="easyBtn">EASY</div>
+        <div id="normalBtn">NORMAL</div>
+        <div id="hardBtn">HARD</div>
+      </div>
+      <div class="levelDescription">
+        <div>4枚</div>
+        <div>8枚</div>
+        <div>16枚</div>
+      </div>
+
+      <p class="description">STARTボタンを押すとゲームが開始します！</p>
+      <div class="btn" id="startBtn">
+        <div>START </div>
+      </div>
+      <p id="errorMsg">難易度選択をしてください！</p>
+    </main>
+
+  </section>
+  <!-- 最終結果画面 -->
+  <section id="finalResult" class="popup">
+    <main>
+      <h1>最終結果</h1>
+      <p id="result-comment">EASY</p>
+      <p>クリアおめでと！</p>
+      <p id="finalResultTimer">かかった時間は90秒でした！</p>
+      <div class="btn">
+        <div id="replayBtn">Replay?</div>
+      </div>
+    </main>
+    <footer>
+      <p>作った人：ふぁん</p>
+      <p> <span id="my-twitter"> <a href="https://twitter.com/fan_tech_" target="_blank">Twitter</a></span></p>
+    </footer>
+  </section>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
