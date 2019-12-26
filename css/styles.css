@@ -24,7 +24,7 @@ body {
   top                             : 50%;
   left                            : 50%;
   margin-left                     : -175px;
-  /* easy -150px,normal           :-195px, hard,-320px */
+  /* easy -150px,norma-195px, hard,-320px */
   margin-top                      : -195px;
 }
 
@@ -44,7 +44,7 @@ body {
   justify-content     : space-around;
   align-items         : center;
   margin              : 0 auto;
-  /* ↓easy 50px normal:50px hard:20px*/
+  /* ↓easy 50px normal:50px hard:30px*/
   margin-top          : 50px;
 }
 

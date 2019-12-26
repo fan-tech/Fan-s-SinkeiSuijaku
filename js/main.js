@@ -396,7 +396,7 @@
       levelChoice.style.display = 'none';
       // カード選択エリアの白背景のheight,margin-topを設定。
       cardsArea.style.height = '520px';
-      cardsArea.style.marginTop = '10px';
+      cardsArea.style.marginTop = '25px';
       // ピンク背景のアレを調整
       mainGameArea.style.height = '600px';
       mainGameArea.style.marginTop = '-325px';
