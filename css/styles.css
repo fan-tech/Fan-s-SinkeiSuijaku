@@ -116,6 +116,7 @@ main>h1 {
 main>p {
   text-align: center;
   font-size : 20px;
+  margin: 0;
 }
 
 main>div>p {

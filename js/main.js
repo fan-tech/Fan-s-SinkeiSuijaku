@@ -16,6 +16,7 @@
   const replayBtn = document.getElementById('replayBtn');
   const backBtn = document.getElementById('backBtn');
   const resultComment = document.getElementById('result-comment');
+  const missResult = document.getElementById('missResult');
 
   // タイマー関連定数
   const timer = document.getElementById('timer');
@@ -27,6 +28,7 @@
   let secondNum = 0;
   let yetOpenCard
   let gameCounter = 0;
+  let missCounter = 0;
 
   // ----------------------
   // タイマー関係変数
@@ -37,12 +39,12 @@
 
   // タイマー関連
   function finalTimer() {
-    let s = Math.floor(elapsedTime % 60000 / 1000);
+    let s = Math.floor(elapsedTime / 1000);
     // s = ('0' + s).slice(-2);
     finalResultTimer.textContent = 'あなたのクリアタイムは' + s + '秒でした！';
   }
-  function updateTimetText() {
-    let s = Math.floor(elapsedTime % 60000 / 1000);
+  function updateTimeText() {
+    let s = Math.floor(elapsedTime / 1000);
     // s = ('0' + s).slice(-2);
 
     timer.textContent = 'time: ' + s + '秒';
@@ -51,8 +53,8 @@
   function countUp() {
     timerId = setTimeout(function () {
       elapsedTime = Date.now() - startTime + timeToadd;
-      updateTimetText()
-      finalTimer()
+      updateTimeText();
+      finalTimer();
       countUp();
     }, 10);
   }
@@ -91,7 +93,7 @@
     // タイマー開始です。
     startTime = Date.now();
     countUp();
-
+    updateTimeText();
     for (let i = 0; i < classCardAreas.length; i++) {
       classOnOffCheck[i].classList.add('yet-card');
       classCardAreas[i].addEventListener('click', () => {
@@ -159,6 +161,8 @@
         for (let i = 0; i < classOnOffCheck.length; ++i) {
           if (classOnOffCheck[i].classList.contains('card-show')) {
             classOnOffCheck[i].classList.remove('card-show');
+            // ミスカウンターを＋1します。
+            missCounter++;
           }
         }
         gameCounter = 0;
@@ -191,11 +195,13 @@
 
     // 関数：最終結果確認（上で使用しています）
     function checkFinalResult() {
-      // 1秒後にリザルト画面を出しています。
-      // setTimeout(() => {
+
       mainGameArea.style.display = 'none';
       finalResult.style.display = 'block';
-      // },1000);
+      // ミスのリザルトを表示！
+
+      missResult.textContent = `おてつきは${missCounter / 2}回でした！`;
+
       // いわゆる、リセットボタンです。
       replay();
       resetGame();
@@ -209,8 +215,10 @@
         // タイマーをリセットしています。
         elapsedTime = 0;
         timeToadd = 0;
-        
-        updateTimetText();
+        // missCounterをリセットします。
+        missCounter = 0;
+
+
         // 画面を難易度選択にしています。
         finalResult.style.display = 'none';
         levelChoice.style.display = 'block';
@@ -224,11 +232,12 @@
     clearTimeout(timerId);
     timeToadd += Date.now() - startTime;
     // タイマーをリセットしています。
-       elapsedTime = 0;
+    elapsedTime = 0;
     timeToadd = 0;
-    updateTimetText();
+    // ゲームのリセットをしてます。
+    gameCounter = 0;
+    missCounter = 0;
     // 画面を難易度選択にしています。
-    gameCounter = 0; 
     mainGameArea.style.display = 'none';
     resetGame();
     levelChoice.style.display = 'block';
