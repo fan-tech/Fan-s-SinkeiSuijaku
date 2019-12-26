@@ -144,7 +144,6 @@
     }
     // もし、数字が一致してたら以下の処理をする。
     if (firstNum === secondNum) {
-      // setTimeout(() => {
       for (let i = 0; i < classOnOffCheck.length; ++i) {
         if (classOnOffCheck[i].classList.contains('card-show')) {
           classOnOffCheck[i].classList.remove('card-show');
@@ -153,7 +152,6 @@
         }
       }
       gameCounter = 0;
-      // },500);
       // 一致してなかったら以下の処理をする。
     } else if (firstNum !== secondNum) {
       // 1秒後に、一時表示クラスを外してウラ表示にする。
@@ -171,39 +169,36 @@
     }
 
     // 1200ms後に最終チェックをします。
-    setTimeout(() => {
-      // すでに開いているカードは0枚です。（初期値）
-      yetOpenCard = 0;
+    // すでに開いているカードは0枚です。（初期値）
+    yetOpenCard = 0;
 
-      // yet-cardクラスがあるかどうかカードの数だけ確認します。
-      for (let i = 0; i < classOnOffCheck.length; i++) {
-        if (classOnOffCheck[i].classList.contains('yet-card')) {
-          yetOpenCard++;
-        }
+    // yet-cardクラスがあるかどうかカードの数だけ確認します。
+    for (let i = 0; i < classOnOffCheck.length; i++) {
+      if (classOnOffCheck[i].classList.contains('yet-card')) {
+        yetOpenCard++;
       }
-      console.log(yetOpenCard);
-      // 0枚だった場合は最終結果をチェックします。
-      if (yetOpenCard === 0) {
-        backBtn.style.display = 'none';
-        // タイマーを止めてます。
-        clearTimeout(timerId);
-        timeToadd += Date.now() - startTime;
-        // 最終結果を確認しています。
-        checkFinalResult();
-      }
-    }, 1200);
+    }
+    // 0枚だった場合は最終結果をチェックします。
+    if (yetOpenCard === 0) {
+      backBtn.style.display = 'none';
+      // タイマーを止めてます。
+      clearTimeout(timerId);
+      timeToadd += Date.now() - startTime;
+      checkFinalResult();
+    }
+    // 最終結果を確認しています。
     // ---------------------------------
 
     // 関数：最終結果確認（上で使用しています）
     function checkFinalResult() {
       // 1秒後にリザルト画面を出しています。
       // setTimeout(() => {
-      resetGame();
       mainGameArea.style.display = 'none';
       finalResult.style.display = 'block';
       // },1000);
       // いわゆる、リセットボタンです。
       replay();
+      resetGame();
     }
     // ----------------------------
     // 関数：リセットボタン（上で使用しています）
@@ -290,7 +285,7 @@
     if (normalBtn.style.background = '#F4B2BA') {
       normalBtn.style.background = '#BDBDBD';
       normalBtn.style.border = '1px solid black';
-      
+
     }
     if (hardBtn.style.background = '#F4B2BA') {
       hardBtn.style.background = '#BDBDBD';
