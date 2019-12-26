@@ -14,7 +14,7 @@ body {
 #mainGameArea {
   display                         : none;
   width                           : 350px;
-  /* ↓easy 300px,normal 390px,hard:600px */
+  /* ↓easy 300px,normal 390px,hard:550px */
   height                          : 390px;
   box-sizing                      : border-box;
   border-radius                   : 32px;
@@ -54,8 +54,10 @@ body {
   justify-content  : center;
   align-items      : center;
   border           : 1px black solid;
-  width            : 65px;
-  height           : 100px;
+  /* hard 50px */
+  width            : 60px;
+  /* hard 90px */
+  height           : 95px;
   /* text-align    : center; */
   background       : #F4B2BA;
   pointer-events   : auto;

@@ -15,7 +15,8 @@
   const finalResult = document.getElementById('finalResult');
   const replayBtn = document.getElementById('replayBtn');
   const backBtn = document.getElementById('backBtn');
-  const resultComment = document.getElementById('result-comment')
+  const resultComment = document.getElementById('result-comment');
+
   // タイマー関連定数
   const timer = document.getElementById('timer');
   const finalResultTimer = document.getElementById('finalResultTimer');
@@ -346,6 +347,9 @@
       // メインゲームエリアを表示、レベル選択画面を消す。
       mainGameArea.style.display = 'block';
       levelChoice.style.display = 'none';
+      // カード自体のサイズを変更
+
+
       // カード選択エリアの白背景のheight,margin-topを設定。
       cardsArea.style.height = '150px';
       cardsArea.style.marginTop = '50px';
@@ -371,7 +375,9 @@
       // メインゲームエリアを表示、レベル選択画面を消す。
       mainGameArea.style.display = 'block';
       levelChoice.style.display = 'none';
-      // カード選択エリアの白背景のheight,margin-topを設定。
+      // カード自体のサイズを変更;
+
+      // カード選択エリアの白背景のheight,margin;-topを設定。
       cardsArea.style.height = '270px';
       cardsArea.style.marginTop = '30px';
       // ピンク背景のアレを調整
@@ -394,14 +400,16 @@
       // メインゲームエリアを表示、レベル選択画面を消す。
       mainGameArea.style.display = 'block';
       levelChoice.style.display = 'none';
+      // カード自体のサイズを変更
+
       // カード選択エリアの白背景のheight,margin-topを設定。
-      cardsArea.style.height = '520px';
-      cardsArea.style.marginTop = '0px';
+      cardsArea.style.height = '490px';
+      cardsArea.style.marginTop = '3px';
       // ピンク背景のアレを調整
-      mainGameArea.style.height = '600px';
+      mainGameArea.style.height = '510px';
       mainGameArea.style.marginTop = '-325px';
       // 難易度設定に戻るボタンの調整
-      backBtn.style.marginTop = '280px';
+      backBtn.style.marginTop = '220px';
       // ゲーム部分
       gameStart();
     }
