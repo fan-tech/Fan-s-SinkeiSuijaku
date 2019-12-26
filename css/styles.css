@@ -304,15 +304,15 @@ footer>p {
 
 #my-twitter>a {
   font-weight    : bold;
-  width          : 150px;
-  height         : 50px;
-  line-height    : 50px;
+  width          : 100px;
+  height         : 40px;
+  line-height    : 40px;
   border-radius  : 6px;
   background     : white;
   border         : 1px solid black;
   cursor         : pointer;
   user-select    : none;
-  font-size      : 25px;
+  font-size      : 20px;
   color          : #707070;
   transition     : color 0.5s;
   text-decoration: none;
