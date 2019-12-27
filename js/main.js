@@ -113,8 +113,8 @@
           secondNum = classOnOffCheck[i].textContent;
           for (let j = 0; j < classCardAreas.length; j++) {
             classCardAreas[j].style.pointerEvents = 'none';
-            checkMiniGameResult(firstNum, secondNum);
           }
+          checkMiniGameResult(firstNum, secondNum);
         }
       });
 
@@ -163,9 +163,9 @@
           if (classOnOffCheck[i].classList.contains('card-show')) {
             classOnOffCheck[i].classList.remove('card-show');
             // ミスカウンターを＋1します。
-            missCounter++;
           }
         }
+        missCounter++;
         gameCounter = 0;
       }, 1000);
     }
@@ -173,7 +173,6 @@
       classCardAreas[k].style.pointerEvents = 'auto';
     }
 
-    // 1200ms後に最終チェックをします。
     // すでに開いているカードは0枚です。（初期値）
     yetOpenCard = 0;
 
@@ -201,7 +200,7 @@
       finalResult.style.display = 'block';
       // ミスのリザルトを表示！
 
-      missResult.textContent = `おてつきは${missCounter / 2}回でした！`;
+      missResult.textContent = `おてつきは${missCounter}回でした！`;
 
       // いわゆる、リセットボタンです。
       replay();
@@ -353,9 +352,6 @@
       // メインゲームエリアを表示、レベル選択画面を消す。
       mainGameArea.style.display = 'block';
       levelChoice.style.display = 'none';
-      // カード自体のサイズを変更
-
-
       // カード選択エリアの白背景のheight,margin-topを設定。
       cardsArea.style.height = '150px';
       cardsArea.style.marginTop = '50px';
