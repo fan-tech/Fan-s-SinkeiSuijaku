@@ -5,6 +5,7 @@
   const levelChoice = document.getElementById('levelChoice');
   const mainGameArea = document.getElementById('mainGameArea');
   const okBtn = document.getElementById('okBtn');
+  const startBtn = document.getElementById('startBtn');
   const easyBtn = document.getElementById('easyBtn');
   const normalBtn = document.getElementById('normalBtn');
   const hardBtn = document.getElementById('hardBtn');
